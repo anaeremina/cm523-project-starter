@@ -1,2 +1,26 @@
 /* ===== YOUR CSS GOES HERE ===== */
+
+            /* CSS Reset*/
+* {
+   
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  box-sizing: border-box;
+  }
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+        /* Styles*/
+
+
 /* ===== START WITH GLOBAL STYLES THEN USE MEDIA QUERIES FOR LAYOUT ADJUSTMENTS ===== */
