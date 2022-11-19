@@ -1,15 +1,17 @@
 /* ===== YOUR CSS GOES HERE ===== */
 
             /* CSS Reset*/
+@import url(“https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap”);
 :root {
-   --color-primary: #6646cd;
-    --color-primary-alt: #6f6ffd;
-    --color-secondary: #00000;
-    --color-background: #d2fbf7;
-    --color-text: #412d86;
-    --color-light: #fff;
-    --color-anchor: #3a00ff;
-    --font-family: "Baloo 2", sans-serif;
+   --color-primary: #FBF5D1;
+    --color-primary-alt: #FFD622;
+    --color-secondary:#58A2E8;
+    --color-background: #FFFCF9;
+    --color-text: #353943;
+    --color-accent: #F44D10;
+    --font-Display: "Space Grotesk";
+    --font-subtitle: "Inter";
+    --font-body: "Playfair Display";
     --font-weight-strong: 500;
     --font-size-h1: 6rem;
     --font-size-h2: 3rem;
@@ -85,13 +87,6 @@ h1 {
   h2 {
     font-size: var(--font-size-h2);
     font-size: clamp(2rem, 4vw, var(--font-size-h2));
-  }
-  
-  #main h2 {
-    background-color: var(--color-secondary);
-    align-self: center;
-    color: var(--color-background);
-    padding: 0.25em 0.5em;
   }
   
   h3 {
