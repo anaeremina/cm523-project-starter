@@ -107,13 +107,33 @@ h1 {
   p {
     margin: 0 0 1rem;
   }
+/* Intro */
+.intro h1 {
+  display: flex;
+   font-family: var(--font-Display);
+   width: 100%;
+   padding: 0 2em;
+   font-weight: 400;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  }
+
+/*Nav Bar*/
 
 
- /* Main Menu*/
+
+/* ===== Main Menu* ===== */
+
+    /* Image size edit*/
+ .main-menu svg {
+  width: 22px;
+  margin-left: 4px;
+ }
 
  article {
     background-color: var(--color-background);
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -249,5 +269,22 @@ h1 {
       height: 260px;
     }
   }
+
+  /* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+  }
+  
+  /* For devices larger than 550px */
+  @media (min-width: 550px) {
+  .container {
+    width: 80%;
+  }
+}
+
+
 
   
