@@ -22,12 +22,16 @@
     <!--Back Home Arrow-->
    
      <!-- Notebook -->
-
-     <textarea rows = "5" cols = "60" name = "description">
-        Enter details here...
-     </textarea><br>
-     <input type = "submit" value = "submit" />
-     
+     <div class="newPost">
+      <h3>Add New Post</h3>
+      <input type="text" placeholder="Enter title here">
+      <div class="editor" contenteditable></div>
+      <div class="buttons">
+        <!--<button type="button">save draft</button>-->
+        <button data-func="clear" type="button">clear</button>
+        <button data-func="save" type="button">save</button>
+      </div>
+    </div>
           <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
   </body>
   </html>
