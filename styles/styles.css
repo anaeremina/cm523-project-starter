@@ -170,6 +170,8 @@ header p {
  }
 
 /* Flip Card*/ 
+
+
       .cardBox {
         float: left;
         font-size: 1.2em;
@@ -182,11 +184,12 @@ header p {
         transform: rotateY(180deg);
       }
       .card {
-        background: var(--color-primary-alt);
+        background: var(--color-primary);
+        border:0.15em solid #222;
         cursor: pointer;
-        height: 250px;
+        height: 300px;
         transform-style: preserve-3d;
-        transition: transform 0.5s ease 0s;
+        transition: transform 0.4s ease 0s;
         width: 100%;
       }
       .card p {
@@ -261,22 +264,21 @@ header p {
           transform: rotateY(0deg);
         }
       }
- /* Check-In Button */
-
- .checkin-button a {
-  color:var(--color-text);
-  display:inline-block;
-  padding:0.2em 1.45em;
-  margin:0.1em;
-  border:0.15em solid var(--border-color);
-  box-sizing: border-box;
-  text-decoration:none;
-  text-align:center;
-  position:relative;
- }
- .checkin-button a:hover {
-  border-color:#000000;
+      
+  /* footer*/
+  .page-footer {
+    padding-block: 2rem;
   }
+  
+  .page-footer .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  
+
+ 
 
 
 
