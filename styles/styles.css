@@ -107,41 +107,67 @@ h1 {
   p {
     margin: 0 0 1rem;
   }
-/* Intro */
-.intro h1 {
+
+
+/* ===== Home Page * ===== */
+
+.main-page-menu a {
+  display: inline-block;
+  color: var(--color-text);
+  position: relative;
+  text-decoration: none;
+}
+.main-page-menu a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+header > .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-   font-family: var(--font-Display);
-   width: 100%;
-   padding: 0 2em;
-   font-weight: 400;
-   height: 100vh;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-  }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1em 0;
+  text-align: center;
+}
+header h1 {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.18em;
+}
 
-/*Nav Bar*/
+header h2 {
+  font-variant: initial;
+  font-family: var(--font-size-h4);
+  max-width: 30ch;
+}
 
+header p {
+  line-height: 1.6;
+}
 
+header p a:first-of-type {
+  font-family: var(--font-subtitle);
+  display: block;
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  letter-spacing: 0.25em;
+}
 
-/* ===== Main Menu* ===== */
+header p {
+  font-style: italic;
+}
 
+/*About button*/
     /* Image size edit*/
  .main-menu svg {
   width: 22px;
   margin-left: 4px;
  }
-
- article {
-    background-color: var(--color-background);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 0 2em;
-    font-weight: 400;
-    height: 100vh;
-  }
 
 /* Flip Card*/ 
       .cardBox {
@@ -235,7 +261,25 @@ h1 {
           transform: rotateY(0deg);
         }
       }
-      
+ /* Check-In Button */
+
+ .checkin-button a {
+  color:var(--color-text);
+  display:inline-block;
+  padding:0.2em 1.45em;
+  margin:0.1em;
+  border:0.15em solid var(--border-color);
+  box-sizing: border-box;
+  text-decoration:none;
+  text-align:center;
+  position:relative;
+ }
+ .checkin-button a:hover {
+  border-color:#000000;
+  }
+
+
+
   /* MEDIA QUERIES*/
 
        /* Remove all animations and transitions for people that prefer not to see them */
@@ -284,6 +328,14 @@ h1 {
     width: 80%;
   }
 }
+/* Check-in Button Home page*/
+
+@media all and (max-width:30em){
+  .checkin-button a{
+  display:block;
+  margin:0.2em auto;
+  }
+  }
 
 
 
