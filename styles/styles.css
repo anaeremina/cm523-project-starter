@@ -431,7 +431,7 @@ article.main-summary {
 /* ===== Notebook * ===== */
 
 /*Button back home*/
-a.back-home-calendar-button {
+a.back-home-notebook-button {
   text-decoration: none;
   display: inline-block;
   padding: 8px 16px;
@@ -439,7 +439,7 @@ a.back-home-calendar-button {
   border: 0.15em solid #222;
 }
 
-a.back-home-calendar-button:hover {
+a.back-home-notebook-button:hover {
   background-color: var(--color-accent);
   color: black;
   border-radius: 50%;
@@ -501,40 +501,77 @@ a.back-home-calendar-button:hover {
     }
   
 
+
+  /* ===== Calendar * ===== */
+
+/*Button back home*/
+a.back-home-calendar-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50%;
+  border: 0.15em solid #222;
+}
+
+a.back-home-calendar-button:hover {
+  background-color: var(--color-accent);
+  color: black;
+  border-radius: 50%;
+}
+
+
+/* ===== Tasks * ===== */
+
+/*Button back home*/
+a.back-home-tasks-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50%;
+  border: 0.15em solid #222;
+}
+
+a.back-home-tasks-button:hover {
+  background-color: var(--color-accent);
+  color: black;
+  border-radius: 50%;
+}
+
+
 /* ===== MEDIA QUERIES * ===== */
 
        /* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
- /* Flip */
-  @media screen and (max-width: 767px) {
-    .cardBox {
-      margin-left: 2.8%;
-      margin-top: 3%;
-      width: 46%;
-    }
-    .card {
-      height: 285px;
-    }
-    .cardBox:last-child {
-      margin-bottom: 3%;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .cardBox {
-      width: 94.5%;
-    }
-    .card {
-      height: 260px;
-    }
-  }
-
+       @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+     /* Flip */
+      @media screen and (max-width: 767px) {
+        .cardBox {
+          margin-left: 2.8%;
+          margin-top: 3%;
+          width: 46%;
+        }
+        .card {
+          height: 285px;
+        }
+        .cardBox:last-child {
+          margin-bottom: 3%;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .cardBox {
+          width: 94.5%;
+        }
+        .card {
+          height: 260px;
+        }
+      }
+    
   /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
