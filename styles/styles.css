@@ -429,6 +429,25 @@ article.main-summary {
     }
     
 /* ===== Notebook * ===== */
+
+/*Button back home*/
+a.back-home-calendar-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50%;
+  border: 0.15em solid #222;
+}
+
+a.back-home-calendar-button:hover {
+  background-color: var(--color-accent);
+  color: black;
+  border-radius: 50%;
+}
+
+
+/*Text box*/
+
 .newPost {
   margin: 50px auto;
   padding: 50px 40px;
@@ -453,10 +472,6 @@ article.main-summary {
     font-size: 24px;
     color: var(--color-text);
     margin-bottom: 20px;
-  }
-  
-  .toolbar {
-    background: var(--color-primary);
   }
 
   .editor {
