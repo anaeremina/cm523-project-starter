@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>upforu</title>
+  <link rel="stylesheet" href="./styles/public.css">
+  <link rel="stylesheet" href="./styles/countdown.css">
+</head>
+
+<body>
+  <div class="main_content" v-cloak id="app">
+    <div class="title">UpForU</div>
+    <div class="header">
+      <a href="time_progress.html" class="back-home-tasks-button"></a>
+    </div>
+
+    <h1 v-if="alltime==4&&status!='skip'">click the button to <br>start the exersice</h1>
+    <h1  v-if="alltime==7&&status!='skip'">Two more to go.<br>Hold your breathe <br>for 7s.</h1>
+    <h1  v-if="alltime==8&&status!='skip'">Almost there!<br>Hold your breathe <br>for 8s.</h1>
+
+    <div class="skip_text" v-if="status=='skip'">Two more to go.<br>Hold your breathe for {{alltime}}s.</div>
+
+    <div class="text_continue"  v-if="status=='skip'" @click="status='circle'">
+      <button>yes,continue</button>
+    </div>
+
+    <div class="circle"  v-if="status!='skip'">
+      <div class="text" @click="press">
+        {{time ? time:text}}
+      </div>
+      <div :style="circleDeg > 180 ? '' : 'clip: rect(0, 1em, 1em, 0.5em);'" class="slice" >
+        <div :style="{'--deg':circleDeg > 180 ? 180 : circleDeg}" class="bar"></div>
+        <div v-if="circleDeg > 180" :style="{'--deg':circleDeg - 180}" class="fill"></div>
+      </div>
+      <div class="circle_center" @click="press"></div>
+    </div>
+
+    
+
+    <div class="skip" @click="skip">skip</div>
+  </div>
+
+</body>
+
+<script src="./scripts/vue.js"></script>
+<script>
+  new Vue({
+    el: "#app",
+    data: function () {
+      return {
+        active_index:0,
+        time_arr:[4,7,8],
+        status:'circle',
+        deg: 0,
+        alltime:4,//总时间
+        nowtime:4,
+        time:'',
+        text:'press'
+      }
+    },
+    filters: {
+      toFixed2: function (num) {
+        return (num * 100).toFixed(2)
+      }
+    },
+    computed: {
+      circleDeg: function () {
+        if(this.deg<360){
+          return  this.deg % 360
+        }else{
+          return  360
+        }
+        
+      }
+    },
+    methods:{
+      skip(){
+        if(this.active_index<this.time_arr.length-1){
+          this.status='skip';
+          this.active_index++;
+          this.alltime=this.time_arr[this.active_index]
+          this.nowtime=this.time_arr[this.active_index]
+          this.text='press'
+          this.deg=0;
+        }
+      },
+      press(){
+        if(this.text=='Done'){
+          return;
+        }
+        this.time= this.getTime(this.nowtime)
+        var timer=setInterval(()=>{
+          if(this.nowtime>0){
+            this.nowtime--;
+            this.time= this.getTime(this.nowtime);
+            this.deg=(this.alltime-this.nowtime)/this.alltime*360
+          }else{
+            this.time='';
+            this.text='Done';
+            clearInterval(timer)
+          }
+        },1000)
+      },
+       getTime(time) {
+            // 转换为式分秒
+            let h = parseInt(time / 60 / 60 % 24)
+            h = h < 10 ? '0' + h : h
+            let m = parseInt(time / 60 % 60)
+             m = m < 10 ? '0' + m : m
+            let s = parseInt(time % 60)
+             s = s < 10 ? '0' + s : s
+            // 作为返回值返回
+            return h+':'+m+':'+s
+        }
+    },
+    mounted(){
+      
+    },
+  })
+</script>
+
+</html>

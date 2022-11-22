@@ -1,0 +1,600 @@
+/* ===== YOUR CSS GOES HERE ===== */
+
+
+/* ===== CSS RESET ===== */
+
+@import url(“https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap”);
+:root {
+   --color-primary: #FBF5D1;
+    --color-primary-alt: #FFD622;
+    --color-secondary:#58A2E8;
+    --color-background: #FFFCF9;
+    --color-text: #353943;
+    --color-accent: #F44D10;
+    --border-color: #94918f;
+    --color-base:#FFFFFF;
+    --font-Display: "Space Grotesk", sans-serif;
+    --font-subtitle: "Inter", sans-serif;
+    --font-body: "Playfair Display", serif;
+    --font-weight-strong: 500;
+    --font-size-h1: 6rem;
+    --font-size-h2: 3rem;
+    --font-size-h3: 2rem;
+    --font-size-h4: 1.35rem;
+    --font-size-text: 1.15rem;
+    --border-radius: 8px;
+ }
+
+ /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    overflow-x: hidden;
+}
+/* Make images easier to work with*/
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ===== START WITH GLOBAL STYLES THEN USE MEDIA QUERIES FOR LAYOUT ADJUSTMENTS ===== */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--font-weight-strong);
+  line-height: 1;
+  margin-bottom: 0.65em;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-size: clamp(2rem, 7vw, var(--font-size-h1));
+  }
+  
+  h2 {
+    font-size: var(--font-size-h2);
+    font-size: clamp(2rem, 4vw, var(--font-size-h2));
+  }
+  
+  h3 {
+    font-size: var(--font-size-h3);
+  }
+  
+  h4 {
+    font-size: var(--font-size-h4);
+  }
+  
+  p,
+  li {
+    font-size: var(--font-size-text);
+  }
+  
+  p {
+    margin: 0 0 1rem;
+  }
+
+
+/* ===== HOME PAGE (index) * ===== */
+  /* about link */
+.main-page-menu a {
+  display: inline-block;
+  color: var(--color-text);
+  position: relative;
+  text-decoration: none;
+}
+.main-page-menu a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+   /* about link image size edit*/
+   .main-menu svg {
+    width: 22px;
+    margin-left: 4px;
+   }
+  /*header section*/
+header > .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1em 0;
+  text-align: center;
+}
+header h1 {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.18em;
+}
+
+header h2 {
+  font-variant: initial;
+  font-family: var(--font-size-h4);
+  max-width: 30ch;
+}
+
+header p {
+  line-height: 1.6;
+}
+
+header p a:first-of-type {
+  font-family: var(--font-subtitle);
+  display: block;
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  letter-spacing: 0.25em;
+}
+
+header p {
+  font-style: italic;
+}
+ /* Scroll Indicator*/ 
+ .scroll-indicator {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-indicator::before {
+  animation: bounce 1s ease infinite;
+  bottom: 2rem;
+  color: var(--color-text);
+  content: '╲╱';
+  font-size: 2rem;
+  height: 4rem;
+  left: 50%;
+  letter-spacing: -1px;
+  line-height: 4rem;
+  margin-left: -3rem;
+  opacity: 0.8;
+  position: absolute;
+  text-align: center;
+  width: 6rem;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-50%);
+  }
+}
+ 
+    /* Flip Card*/ 
+
+      .cardBox {
+        float: left;
+        font-size: 1.2em;
+        margin: 1% 0 0 1%;
+        perspective: 800px;
+        transition: all 0.4s ease 0s;
+        width: 20%;
+      }
+      .cardBox:hover .card {
+        transform: rotateY(180deg);
+      }
+      .card {
+        background: var(--color-primary);
+        border:0.15em solid #222;
+        cursor: pointer;
+        height: 300px;
+        transform-style: preserve-3d;
+        transition: transform 0.4s ease 0s;
+        width: 100%;
+      }
+      .card p {
+        margin-bottom: 1.8em;
+      }
+      .card .front,
+      .card .back {
+        backface-visibility: hidden;
+        box-sizing: border-box;
+        color: var(--color-text);
+        display: block;
+        font-size: 1.2em;
+        height: 100%;
+        padding: 0.8em 0.7em;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+      }
+      .card .front strong {
+        background: #fff;
+        border-radius: 100%;
+        color: #222;
+        font-size: 1.5em;
+        line-height: 30px;
+        padding: 0 7px 4px 6px;
+      }
+      .card .back {
+        transform: rotateY( 180deg);
+      }
+      .card .back a {
+        padding: 0.3em 0.5em;
+        background: var(--color-secondary);
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 0.9em;
+        transition: all 0.2s ease 0s;
+      }
+      .card .back a:hover {
+        background: #fff;
+        color: #333;
+      }
+      .cardBox:nth-child(1) .card .back {
+        background: var(--color-primary);
+      }
+      .cardBox:nth-child(2) .card .back {
+        background:  var(--color-primary);
+      }
+      .cardBox:nth-child(3) .card .back {
+        background: var(--color-primary);
+      }
+      .cardBox:nth-child(2) .card {
+        -webkit-animation: giro 1.5s 1;
+        animation: giro 1.5s 1;
+      }
+      .cardBox:nth-child(3) .card {
+        -webkit-animation: giro 2s 1;
+        animation: giro 2s 1;
+      }
+      @-webkit-keyframes giro {
+        from {
+          transform: rotateY(180deg);
+        }
+        to {
+          transform: rotateY(0deg);
+        }
+      }
+      @keyframes giro {
+        from {
+          transform: rotateY(180deg);
+        }
+        to {
+          transform: rotateY(0deg);
+        }
+      }
+
+      /* footer*/
+  .page-footer {
+    padding-block: 2rem;
+  }
+  
+  .page-footer .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  
+/* ===== ABOUT PAGE * ===== */
+
+/*Back home button*/ 
+
+a.button-back-home {
+border: 0.15em solid #222;
+display:inline-block;
+padding:0.2em 1.45em;
+margin:0.1em;
+text-decoration:none;
+}
+a.button-back-home:hover {
+border-color:#7a7a7a;
+}
+
+a.button-back-home:active{
+background-color:#999999;
+  }
+
+/*Contents*/ 
+
+.container-summary {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+article.main-summary {
+  margin: 1em 0;
+}
+
+
+.container-summary p, ul > li, ol > li {
+  margin: 0 0 0.75em;
+}
+
+    /* Menu */
+    label .menu-about-us {
+      position: absolute;
+      right: -100px;
+      top: -100px;
+      z-index: 100;
+      width: 200px;
+      height: 200px;
+      background: var(--color-primary);
+      border-radius: 50% 50% 50% 50%;
+      -webkit-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+      cursor: pointer;
+      
+    }
+    
+    label .hamburger {
+      position: absolute;
+      top: 135px;
+      left: 50px;
+      width: 30px;
+      height: 2px;
+      background: var(--color-text);
+      display: block;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+    }
+    
+    label .hamburger:after, label .hamburger:before {
+      -webkit-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--color-text);
+    }
+    
+    label .hamburger:before { top: -10px; }
+    
+    label .hamburger:after { bottom: -10px; }
+    
+    label input { display: none; }
+    
+    label input:checked + .menu-about-us {
+      box-shadow: 0 0 0 100vw var(--color-primary), 0 0 0 100vh var(--color-primary);
+      border-radius: 0;
+      
+    }
+    
+    label input:checked + .menu-about-us .hamburger {
+      transform: rotate(45deg);
+      
+    }
+    
+    label input:checked + .menu-about-us .hamburger:after {
+      transform: rotate(90deg);
+      bottom: 0;
+      
+    }
+    
+    label input:checked + .menu-about-us .hamburger:before {
+      transform: rotate(90deg);
+      top: 0;
+      
+    }
+    
+    label input:checked + .menu-about-us + ul { opacity: 1; }
+    
+    label ul {
+      z-index: 200;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: .25s 0s ease-in-out;
+      list-style-type:none;
+    }
+    
+    label a {
+      margin-bottom: 1em;
+      display: block;
+      color: var(--color-text);
+      text-decoration: none;
+      
+    }
+    
+/* ===== Notebook * ===== */
+
+/*Button back home*/
+a.back-home-notebook-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50%;
+  border: 0.15em solid #222;
+}
+
+a.back-home-notebook-button:hover {
+  background-color: var(--color-accent);
+  color: black;
+  border-radius: 50%;
+}
+
+
+/*Text box*/
+
+.newPost {
+  margin: 50px auto;
+  padding: 50px 40px;
+  width: 100%; 
+  max-width: 800px;
+  min-width: 480px;
+  background: #FFF;
+  font-family: 'Asap', sans-serif;
+}
+
+  h3 {
+   margin: 0px 0px 20px 0px;
+   font-size: 30px;
+  }
+  
+  input[type="text"] {
+    padding-left: 15px;
+    width: 100%;
+    height: 45px;
+    border: 1px solid var(--color-text);
+    outline: none;
+    font-size: 24px;
+    color: var(--color-text);
+    margin-bottom: 20px;
+  }
+
+  .editor {
+    min-height: 300px;
+    width: 100%;
+    resize: none;
+    border: 1px solid var(--color-text);
+    outline: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    position:relative;
+  }
+    .saved {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      color: #FFF;
+      text-transform: uppercase;
+      background: var(--color-primary);
+      font-weight: bold;
+      border-top-left-radius: 15px;
+    }
+  
+
+
+  /* ===== Calendar * ===== */
+
+/*Button back home*/
+a.back-home-calendar-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50%;
+  border: 0.15em solid #222;
+}
+
+a.back-home-calendar-button:hover {
+  background-color: var(--color-accent);
+  color: black;
+  border-radius: 50%;
+}
+
+
+/* ===== Tasks * ===== */
+
+/*Button back home*/
+a.back-home-tasks-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50%;
+  border: 0.15em solid #222;
+}
+
+a.back-home-tasks-button:hover {
+  background-color: var(--color-accent);
+  color: black;
+  border-radius: 50%;
+}
+
+
+/* ===== MEDIA QUERIES * ===== */
+
+       /* Remove all animations and transitions for people that prefer not to see them */
+       @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+     /* Flip */
+      @media screen and (max-width: 767px) {
+        .cardBox {
+          margin-left: 2.8%;
+          margin-top: 3%;
+          width: 46%;
+        }
+        .card {
+          height: 285px;
+        }
+        .cardBox:last-child {
+          margin-bottom: 3%;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .cardBox {
+          width: 94.5%;
+        }
+        .card {
+          height: 260px;
+        }
+      }
+    
+  /* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+  }
+  
+  /* For devices larger than 550px */
+  @media (min-width: 550px) {
+  .container {
+    width: 80%;
+  }
+}
+/* Check-in Button Home page*/
+
+@media all and (max-width:30em){
+  .checkin-button a{
+  display:block;
+  margin:0.2em auto;
+  }
+  }
+
+
+
+  

@@ -1,0 +1,144 @@
+/* ===== YOUR CSS GOES HERE ===== */
+
+
+/* ===== CSS RESET ===== */
+
+:root {
+   --color-primary: #FBF5D1;
+    --color-primary-alt: #FFD622;
+    --color-secondary:#58A2E8;
+    --color-background: #FFFCF9;
+    --color-text: #353943;
+    --color-accent: #F44D10;
+    --border-color: #94918f;
+    --color-base:#FFFFFF;
+    --font-Display: "Space Grotesk", sans-serif;
+    --font-subtitle: "Inter", sans-serif;
+    --font-body: "Playfair Display", serif;
+    --font-weight-strong: 500;
+    --font-size-h1: 6rem;
+    --font-size-h2: 3rem;
+    --font-size-h3: 2rem;
+    --font-size-h4: 1.35rem;
+    --font-size-text: 1.15rem;
+    --border-radius: 8px;
+ }
+
+ /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    overflow-x: hidden;
+}
+/* Make images easier to work with*/
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ===== START WITH GLOBAL STYLES THEN USE MEDIA QUERIES FOR LAYOUT ADJUSTMENTS ===== */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--font-weight-strong);
+  line-height: 1;
+  margin-bottom: 0.65em;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-size: clamp(2rem, 7vw, var(--font-size-h1));
+  }
+  
+  h2 {
+    font-size: var(--font-size-h2);
+    font-size: clamp(2rem, 4vw, var(--font-size-h2));
+  }
+  
+  h3 {
+    font-size: var(--font-size-h3);
+  }
+  
+  h4 {
+    font-size: var(--font-size-h4);
+  }
+  
+  p,
+  li {
+    font-size: var(--font-size-text);
+  }
+  
+
+  .main_content{
+    width: 1186px;
+    margin: 0 auto;
+  }
+
+  .title{
+    font-size: 36px;
+    padding-left: 60px;
+  }
+  .header{
+    margin-top:70px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    position: relative;
+  }
+
+/*Button back home*/
+a.back-home-tasks-button {
+    text-decoration: none;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url('../images//back.png');
+    background-size: 100% 100%;
+    margin-left: 46px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  a.back-home-tasks-button:hover {
+    background-color: var(--color-accent);
+    /* color: black; */
+    border-radius: 50%;
+  }

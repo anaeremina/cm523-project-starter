@@ -1,0 +1,139 @@
+h1 {
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    margin-top: 51px;
+    font-weight: bold;
+    margin-bottom: 21px;
+
+  }
+
+  .circle {
+    width: 1em;
+    height: 1em;
+    margin: 95px auto;
+    border-radius: 50%;
+    /* border: 24px solid #8b8b8b; */
+    /* line-height: 1rem; */
+    text-align: center;
+    background: #8b8b8b;
+    color: #b9b9b9;
+    font-size: 208px;
+    position: relative;
+  }
+
+  /* html {
+      font-size: 208px;
+    } */
+
+  .text {
+    position: absolute;
+    z-index: 999;
+    font-size: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    cursor: default;
+  }
+
+  .circle.active .circle_center {
+    background-color: white;
+  }
+
+  .circle .circle_center {
+    position: absolute;
+    top: 0.125em;
+    left: 0.125em;
+    display: block;
+    content: " ";
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    width: 0.75em;
+    height: 0.75em;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+  }
+
+  .circle .slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+
+  }
+
+  .bar {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: 0.125em solid black;
+    box-sizing: border-box;
+    clip: rect(0, 0.5em, 1em, 0em);
+    /* 截出一个半圆 */
+    transform: rotate(calc(1deg * var(--deg)));
+  }
+
+  .fill {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: 0.125em solid black;
+    box-sizing: border-box;
+    clip: rect(0, 1em, 1em, 0.5em);
+    /* 截出一个半圆 */
+    transform: rotate(calc(1deg * var(--deg)));
+  }
+  .skip_text{
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    margin-top: 51px;
+    font-weight: bold;
+    margin-top: 80px;
+    line-height: 2;
+  }
+  .text_continue{
+    text-align: center;
+    margin-top: 47px;
+  }
+  .text_continue  button{
+    width: 215px;
+    height: 52px;
+    background-color: #d9d9d9;
+    border-radius:26px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .skip{
+    font-size: 12px;
+    text-align: center;
+    color: #929292;
+    margin-top: 148px;
+    cursor: default;
+  }
