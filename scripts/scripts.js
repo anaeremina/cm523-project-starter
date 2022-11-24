@@ -32,3 +32,11 @@ runTimer(document.querySelector('.timer'));
 
 
 /* CALENDAR */
+
+
+
+
+
+/* TASKS */
+
+

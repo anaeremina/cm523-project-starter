@@ -19,21 +19,63 @@
   </head>
   <body>
     <!-- YOUR HTML GOES HERE -->
-
      <!--Back Home Arrow-->
      <a href="index.html" class="back-home-tasks-button">&#8249;</a>
 
- <!-- Quote Container -->
- <div class="container">
-    <!-- Task to be Displayed Here -->
-  
-   <div class="buttons">
-       <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random task is generated-->
-       <button class="next" onclick="getNewTask()">New Task</button>
-   </div>
-</div>
-
-
-        <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
+  <!-- TASK GENERATOR  -->
+<div class="task-generator">
+    <h3>Task Generator</h3>
+     <br><br>   
+    <form name = "WordForm">  
+    <input type = text name="WordBox" id="wordbox"><BR>
+    <br>
+    <input type = button value="Give me a task" onClick="PickRandomWord(document.WordForm);" id="button-task-generator">
+    </form>
+      
+  </div>
   </body>
   </html>
+
+  <!-- JS LOGIC -->
+
+<script>
+  var NumberOfWords = 23
+var words = new BuildArray(NumberOfWords)
+words[1] = "Go swimming"
+words[2] = "Do the dishes"
+words[3] = "Build something in CSS"
+words[4] = "Watch 30 min of JS videos"
+words[5] = "Clean the floors"
+words[6] = "Write for 1 hour"
+words[7] = "Make a youtube video"
+words[8] = "Write 10 jokes"
+words[9] = "Read a Book"
+words[10] = "Take out the trash"
+words[11] = "Clean the kitchen"
+words[12] = "Clean the living room"
+words[13] = "Do aerobics for 30 minutes"
+words[14] = "Clean out the fridge"
+words[15] = "Do the laundry"
+words[16] = "Play with cats for 10 minutes"
+words[17] = "Clean bedroom"
+words[18] = "Take a shower"
+words[19] = "30 minutes of JS lessons"
+words[20] = "Go out for a walk"
+words[21] = "Take a nap"
+words[22] = "Cook pasta"
+words[23] = "Build something in HTML"
+
+function BuildArray(size){
+this.length = size
+for (var i = 1; i <= size; i++){
+this[i] = null}
+return this
+}
+
+function PickRandomWord(frm) {
+var rnd = Math.ceil(Math.random() * NumberOfWords)
+
+
+frm.WordBox.value = words[rnd]
+}
+</script>
