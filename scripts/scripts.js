@@ -29,3 +29,6 @@ function runTimer(timerElement) {
 }
 
 runTimer(document.querySelector('.timer'));
+
+
+/* CALENDAR */
