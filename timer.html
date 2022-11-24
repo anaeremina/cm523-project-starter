@@ -1,15 +1,42 @@
-<div id="app"></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PUT A TITLE IN HERE -->
+    <title>upforu</title>
+    <!-- PUT A DESCRIPTION IN HERE -->
+    <meta name="upforu-timer" content="do a short breathing exercise" />
+    <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
+    <link rel="stylesheet" href="styles.normalize.css" />
+    <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
+    <!-- LINK TO YOUR STYLES -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
+    <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
+    <script src="scripts/scripts.js" defer></script>
+  </head>
+  <body>
 
-document.getElementById("app").innerHTML = `
-<div class="base-timer">
-  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g class="base-timer__circle">
-      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
-    </g>
+     <!-- Timer -->
+     <div class ="text-timer">
+      <h2>Time Left</h2>
+      <h3>Hold your breathe for 4 seconds </h3>
+      </div>
+<div class ="timer-container">
+<div class="timer animatable">
+  <svg>
+    <circle cx="50%" cy="50%" r="90"/>
+    <circle cx="50%" cy="50%" r="90" pathLength="1" />
+    <text x="100" y="100" text-anchor="middle"><tspan id="timeLeft"></tspan></text>
+    <text x="100" y="120" text-anchor="middle">seconds</text>
   </svg>
-  <span>
-    <!-- Remaining time label -->
-  </span>
 </div>
-`;
+<script src ="/.scripts.js" ></script>
+  
 
+          <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
+  </body>
+  </html>
+  
