@@ -32,25 +32,26 @@ runTimer(document.querySelector('.timer'));
 
 
 /* CALENDAR */
+$(document).ready(function() {
 
-document.addEventListener("DOMContentLoaded", function () {
-	var calendar = new FullCalendar.Calendar(
-	  document.getElementById("calendar"),
-	  {
-		initialView: "dayGridMonthCustom",
-		initialDate: "2022-10-29",
-		duration: { weeks: 8 }, //Works when duration is under views does not work here
-		views: {
-		  dayGridMonthCustom: {
-			type: "dayGridMonth",
-			fixedWeekCount: false
-		  }
-		}
-	  }
-	);
-	calendar.render();
-  });
+    // page is now ready, initialize the calendar...
 
+  $('#calendar').fullCalendar({
+    defaultView: 'month', //Possible Values: month, basicWeek, basicDay, agendaWeek, agendaDay
+    header: { 
+      left:   'title',
+      center: '',
+      right:  'today prevYear,prev,next,nextYear', //Possible Values: month, basicWeek, basicDay, agendaWeek, agendaDay, today prevYear,prev,next,nextYear
+    },
+    buttonIcons :{
+      prev: 'left-single-arrow',
+      next: 'right-single-arrow',
+      prevYear: 'left-double-arrow',
+      nextYear: 'right-double-arrow'
+    }
+    });
+
+});
 /* TASKS */
 
 
