@@ -485,7 +485,7 @@ a.back-home-notebook-button {
 }
 
 a.back-home-notebook-button:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
     color: black;
     border-radius: 50%;
 }
@@ -560,144 +560,17 @@ a.back-home-calendar-button {
 }
 
 a.back-home-calendar-button:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
     color: black;
     border-radius: 50%;
 }
 
 /* Style Calendar */
-
-.stracture-calendar {
-    display: grid;
-    margin: 0;
-    min-height: 100vh;
-    place-items: center;
-}
-
-a.calendar {
-    text-decoration: none;
-}
-
-h2.calendar {
-    font-size: 2em;
-    line-height: 1.25em;
-    margin: .25em 0;
-}
-
-h3.calendar {
-    font-size: 1.5em;
-    line-height: 1em;
-    margin: .33em 0;
-}
-
-table.calendar {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.container.calendar {
-    width: 510px;
-}
-
-.calendar {
-    text-align: center;
-}
-
-.calendar header {
-    position: relative;
-}
-
-.calendar h2 {
-    text-transform: uppercase;
-}
-
-.calendar thead {
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.calendar tbody {
-    color: #7c8a95;
-}
-
-.calendar tbody td:hover {
-    border: 2px solid var(--color-secondary);
-}
-
-.calendar td {
-    border: 2px solid transparent;
-    border-radius: 50%;
-    display: inline-block;
-    height: 4em;
-    line-height: 4em;
-    text-align: center;
-    width: 4em;
-}
-
-.calendar .prev-month,
-.calendar .next-month {
-    color: #cbd1d2;
-}
-
-.calendar .prev-month:hover,
-.calendar .next-month:hover {
-    border: 2px solid #cbd1d2;
-}
-
-.current-day {
-    background: var(--color-secondary);
-    color: #f9f9f9;
-}
-
-.event {
-    cursor: pointer;
-    position: relative;
-}
-
-.event:after {
-    background: var(--color-secondary);
-    border-radius: 50%;
-    bottom: .5em;
-    display: block;
-    content: '';
-    height: .5em;
-    left: 50%;
-    margin: -.25em 0 0 -.25em;
-    position: absolute;
-    width: .5em;
-}
-
-.event.current-day:after {
-    background: #f9f9f9;
-}
-
-.btn-prev,
-.btn-next {
-    border: 2px solid #cbd1d2;
-    border-radius: 50%;
-    color: #cbd1d2;
-    height: 2em;
-    font-size: .75em;
-    line-height: 2em;
-    margin: -1em;
-    position: absolute;
-    top: 50%;
-    width: 2em;
-}
-
-.btn-prev:hover,
-.btn-next:hover {
-    background: #cbd1d2;
-    color: #f9f9f9;
-}
-
-.btn-prev {
-    left: 6em;
-}
-
-.btn-next {
-    right: 6em;
-}
+  
+  #calendar {
+    max-width: 900px;
+    margin: 40px auto;
+  }
 
 /* ===== Tasks * ===== */
 
@@ -711,7 +584,7 @@ a.back-home-tasks-button {
 }
 
 a.back-home-tasks-button:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
     color: black;
     border-radius: 50%;
 }
@@ -724,7 +597,7 @@ a.back-home-tasks-button:hover {
     margin-top: 120px;
     text-align: center;
     border-radius: 10px;
-    color: var(--color-accent);
+    color: var(--color-secondary);
 
 }
 
@@ -732,7 +605,7 @@ a.back-home-tasks-button:hover {
     position: absolute;
     margin-left: 420px;
     margin-top: 140px;
-    background: var(--color-accent);
+    background: var(--color-secondary);
     border: 0;
     font-size: 20px;
     padding: .5em 1em;
@@ -755,7 +628,7 @@ a.back-home-tasks-button:hover {
 }
 
 a.back-home-checkin-button:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
     color: black;
     border-radius: 50%;
 }
@@ -771,7 +644,7 @@ a.back-home-checkin-button:hover {
 }
 
 .check-in-text-style p {
-    color: #8f8f8f;
+    color: var(--border-color);
     text-align: center;
     line-height: 27px;
     font-size: var(--font-body);
@@ -783,7 +656,7 @@ a.back-home-checkin-button:hover {
 #progress {
     width: 100%;
     height: 52px;
-    background-color: #d9d9d9;
+    background-color: var(--border-color);
     position: relative;
     margin-top: 149px;
 }
@@ -831,7 +704,7 @@ a.back-home-checkin-button:hover {
     width: 145px;
     height: 42px;
     line-height: 42px;
-    background-color: #828282;
+    background-color: var(--border-color);
     border-radius: 20px;
     border: none;
     color: white;

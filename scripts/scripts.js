@@ -1,48 +1,58 @@
 /* WRITE YOUR JS HERE... YOU MAY REQUIRE MORE THAN ONE JS FILE. IF SO SAVE IT SEPARATELY IN THE SCRIPTS DIRECTORY */
 
 /* TIMER */
-let timer = document.getElementById("timeLeft");
-const timeNum = timer.getAttribute("timer-num");
-let timeLeft = timeNum;
+let timeLeft = 4;
+let timer = document.getElementById('timeLeft');
 
 function isTimeLeft() {
   return timeLeft > -1;
 }
 
 function runTimer(timerElement) {
-  const timerCircle = timerElement.querySelector("svg > circle + circle");
-  timerElement.classList.add("animatable");
-  timerCircle.style.strokeDashoffset = 1;
-
-  let countdownTimer = setInterval(function () {
-    if (isTimeLeft()) {
-      const timeRemaining = timeLeft--;
-      const normalizedTime = (timeNum - timeRemaining) / timeNum;
+	const timerCircle = timerElement.querySelector('svg > circle + circle');
+	timerElement.classList.add('animatable');
+	timerCircle.style.strokeDashoffset = 1;
+    
+	let countdownTimer = setInterval(function(){
+		if(isTimeLeft()){
+			const timeRemaining = timeLeft--;
+			const normalizedTime = (4 - timeRemaining) / 4;
       // for clockwise animation
-      // const normalizedTime = (timeRemaining - 60) / 60;
-      timerCircle.style.strokeDashoffset = normalizedTime;
-      timer.innerHTML = timeRemaining;
-    } else {
-      clearInterval(countdownTimer);
-      timerElement.classList.remove("animatable");
 
-      var href = location.pathname;
-
-      timerElement.onclick = function (e) {
-        if (href == "/timer.html") {
-          location.href = "timer7.html";
-        } else if (href == "/timer7.html") {
-          location.href = "timer8.html";
-        } else if (href == "/timer8.html") {
-          alert("over!");
-        }
-      };
-    }
-  }, 1000);
+      // for clockwise animation
+      // const normalizedTime = (timeRemaining - 60) / 60;      timer.innerHTML = timeRemaining;
+		} else {
+			clearInterval(countdownTimer);
+			timerElement.classList.remove('animatable');
+		}  
+	}, 1000);
 }
 
-runTimer(document.querySelector(".timer"));
+runTimer(document.querySelector('.timer'));
+
 
 /* CALENDAR */
 
+document.addEventListener("DOMContentLoaded", function () {
+	var calendar = new FullCalendar.Calendar(
+	  document.getElementById("calendar"),
+	  {
+		initialView: "dayGridMonthCustom",
+		initialDate: "2022-10-29",
+		duration: { weeks: 8 }, //Works when duration is under views does not work here
+		views: {
+		  dayGridMonthCustom: {
+			type: "dayGridMonth",
+			fixedWeekCount: false
+		  }
+		}
+	  }
+	);
+	calendar.render();
+  });
+
 /* TASKS */
+
+
+
+
