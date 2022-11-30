@@ -9,71 +9,127 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <!-- Scale Plug-In -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Style -->
     <script src="scripts/scripts.js" defer></script>
 </head>
+
 <body>
 
-   <!--Back Home Arrow-->
-   <a href="index.html" class="back-home-checkin-button">&#8249;</a>
+   <!--Style Element-->
+  <style>
+    *,
+  *:after,
+  *:before  {
+  box-sizing: border-box;
+  position: relative;
+  }
+  </style>
+
+  <!--Back Home Arrow-->
+  <a class="btn btn-primary" href="index.html" role="button">Let's Go Back</a>
 
    <!--SCALE -->
-    <div class="main_content">
-      <div class ="check-in-text-style">
-        <h1>How do you feel today?</h1>
-        <p>Drug the scale to the mark corresponding to you
-        current mood</p>
-      </div>
-        <div id="progress">
-            <div class="progress_after"></div>
-            <div id="circle"></div>
-        </div>
-        <div class="btn_content">
-            <a class="save" href="./timer.html">save</a>
-        </div>
-      
 
+   <div class="page-wrapper-scale">
+    <div class="student_feedback_popup_wrapper">
+ <div class='student_feedback_popup_container'>
+    <div class='student_feedback_popup'>
+      <div class='top_section'>
+        <div class='response_depection_wrapper'>
+          <div class='response_depection_container'>
+            <span class='rtype'> Despair</span>
+            <span class='rtype'>Fear</span>
+            <span class='rtype' style="margin-right: 13px;">Anger</span>
+            <span class='rtype' style="margin-right: 6px;">Hope</span>
+            <span class='rtype'>Joy</span>
+          </div>
+          <div class='response_wrapper'>
+            <span class='response_bar'></span>
+            <div class='response_container'>
+              <span class='response_radio'></span>
+            </div>
+            <div class='response_container'>
+              <span class='response_radio'></span>
+            </div>
+            <div class='response_container'>
+              <span class='response_radio'></span>
+            </div>
+            <div class='response_container'>
+              <span class='response_radio'></span>
+            </div>
+            <div class='response_container'>
+              <span class='response_radio'></span>
+            </div>
+          </div>
+          <p class='drag_functionality_label'>Drag the slider to your preferred response.</p>
+        </div>
+      </div>
+      <div class='student_feedback_form'>
+          <ol class='question_list'>
+            <li class='question_container' id="question_li_1">
+              <p class='sfquestion'>What is your opinion?</p>
+              <div class='response_range_container'>
+                <span class='response_bar'></span>
+                <div class='response_radio_container'>
+                  <span class='response_radio'></span>
+                  <span class='response_radio'></span>
+                  <span class='response_radio'></span>
+                  <span class='response_radio'></span>
+                  <span class='response_radio'></span>
+                  <span class='response_radio'></span>
+                </div>
+                <input type="range" name="que1_ans" id="que1_ans" value='0.6' min='0' max='5' step='0.1' class='response_range' onchange="set_response_range_value(this.id)">
+              </div>
+              <span class='response_label'>Select Response</span>
+            </li>
+          </ol>
+      </div>
     </div>
-    
+  </div>
+ </div>
+</div>
+ 
+<a class="btn btn-primary" href="timer.html" role="button">Save</a>
+
+
+   
   </body>
 
      <!--JS LOGIC -->
-  <script>
-  scale=function (btn,bar,title){
-    this.btn=document.getElementById(btn);
-    this.bar=document.getElementById(bar);
-    // this.title=document.getElementById(title);
-    this.step=this.bar.getElementsByTagName("DIV")[0];
-    this.init();
-  };
-  scale.prototype={
-    init:function (){
-      var f=this,g=document,b=window,m=Math;
-      f.btn.onmousedown=function (e){
-        var x=(e||b.event).clientX;
-        var l=this.offsetLeft;
-        var max=f.bar.offsetWidth;
-        // var max=f.bar.offsetWidth-this.offsetWidth/2;
-        g.onmousemove=function (e){
-          var thisX=(e||b.event).clientX;
-          var to=m.min(max,m.max(-2,l+(thisX-x)));
-          f.btn.style.left=to+'px';
-          f.ondrag(m.round(m.max(0,to/max)*100),to);
-          b.getSelection ? b.getSelection().removeAllRanges() : g.selection.empty();
-        };
-        g.onmouseup=new Function('this.onmousemove=null');
-      };
-    },
-    ondrag:function (pos,x){
-      this.step.style.width=Math.max(0,x)+'px';
+
+<script>
+     function set_response_range_value(id) {
+      var input_range = $('#' + id);
+      var range_value = input_range.val();
+      var response_label = input_range.closest('.question_container').find('.response_label');
+      if (range_value <= 0.6) {
+        input_range.val(0.6);
+        response_label.html('Select Response');
+      } else if ((range_value > 0.6) && (range_value < 1.5)) {
+        input_range.val(1);
+        response_label.html('Despair');
+      } else if ((range_value >= 1.5) && (range_value < 2.5)) {
+        input_range.val(2);
+        response_label.html('Fear');
+      } else if ((range_value >= 2.5) && (range_value < 3.5)) {
+        input_range.val(3);
+        response_label.html('Anger');
+      } else if ((range_value >= 3.5) && (range_value < 4.5)) {
+        input_range.val(4);
+        response_label.html('Hope');
+      } else if ((range_value >= 4.5) && (range_value <= 5)) {
+        input_range.val(5);
+        response_label.html('Joy');
+      }
     }
-  };
-  new scale('circle','progress');
-  document.getElementsByClassName('progress_after')[0].style.width='55%';
-  document.getElementById('circle').style.left='55%';
-  </script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    
+    function update_que_response(el) {
+      var selected_radio = $(el);
+      var rvalue = selected_radio.data('ansname');
+      selected_radio.closest('.question_container').find('.response_label').html(rvalue);
+    }
+  </script> 
+  
 </html>
