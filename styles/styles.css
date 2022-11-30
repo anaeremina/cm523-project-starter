@@ -55,6 +55,8 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     overflow-x: hidden;
+    max-width: 1200px;
+    margin:0px auto;
 }
 
 /* Make images easier to work with*/
@@ -79,7 +81,7 @@ h3,
 h4 {
     font-weight: var(--font-weight-strong);
     line-height: 1;
-    margin-bottom: 0.65em;
+    margin-bottom: 0.3em;
 }
 
 h1 {
@@ -111,65 +113,70 @@ p {
 
 
 /* ===== HOME PAGE (index) * ===== */
-/* about link */
-.main-page-menu a {
-    display: inline-block;
-    color: var(--color-text);
-    position: relative;
-    text-decoration: none;
-}
 
-.main-page-menu a:hover {
-    color: var(--color-accent);
-    text-decoration: none;
-}
-
-/* about link image size edit*/
-.main-menu svg {
-    width: 22px;
-    margin-left: 4px;
-}
 
 /*header section*/
+
 header>.intro {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 1em 0;
-    text-align: center;
+}
+     /*header one animation*/
+
+.title-word {
+  animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: var(--color-secondary);
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: var(--color-secondary);
+  --color-2: #E4A9A8;
+  --color-3:var(--color-secondary);
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
 }
 
 header h1 {
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    line-height: 1;
-    letter-spacing: 0.18em;
+    font-size: 13rem;
 }
 
 header h2 {
-    font-variant: initial;
-    font-family: var(--font-size-h4);
+    color:#5f5e5e;
+    font-size: 2.2rem;
     max-width: 30ch;
+
 }
 
-header p {
-    line-height: 1.6;
-}
-
-header p a:first-of-type {
-    font-family: var(--font-subtitle);
-    display: block;
-    font-variant: small-caps;
-    font-size: 1.5rem;
-    letter-spacing: 0.25em;
-}
-
-header p {
-    font-style: italic;
+header p{
+    color:#5f5e5e;
 }
 
 /* Scroll Indicator*/
@@ -181,8 +188,8 @@ header p {
 .scroll-indicator::before {
     animation: bounce 1s ease infinite;
     bottom: 2rem;
-    color: var(--color-text);
-    content: '╲╱';
+    color: var(--color-secondary);
+    content: '↓';
     font-size: 2rem;
     height: 4rem;
     left: 50%;
@@ -192,7 +199,7 @@ header p {
     opacity: 0.8;
     position: absolute;
     text-align: center;
-    width: 6rem;
+    width: 4rem;
 }
 
 @keyframes bounce {
@@ -201,124 +208,25 @@ header p {
     }
 }
 
-/* Flip Card*/
+/* Cards */
 
-.cardBox {
-    float: left;
-    font-size: 1.2em;
-    margin: 1% 0 0 1%;
-    perspective: 800px;
-    transition: all 0.4s ease 0s;
-    width: 20%;
+.card-deck{
+    display: flex;
 }
-
-.cardBox:hover .card {
-    transform: rotateY(180deg);
-}
-
 .card {
-    background: var(--color-primary);
+    background: #fce998;
     border: 0.15em solid #222;
-    cursor: pointer;
-    height: 300px;
-    transform-style: preserve-3d;
-    transition: transform 0.4s ease 0s;
-    width: 100%;
-}
-
-.card p {
-    margin-bottom: 1.8em;
-}
-
-.card .front,
-.card .back {
-    backface-visibility: hidden;
-    box-sizing: border-box;
-    color: var(--color-text);
-    display: block;
-    font-size: 1.2em;
-    height: 100%;
-    padding: 0.8em 0.7em;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-}
-
-.card .front strong {
-    background: #fff;
-    border-radius: 100%;
-    color: #222;
-    font-size: 1.5em;
-    line-height: 30px;
-    padding: 0 7px 4px 6px;
-}
-
-.card .back {
-    transform: rotateY(180deg);
-}
-
-.card .back a {
-    padding: 0.3em 0.5em;
-    background: var(--color-secondary);
-    color: var(--color-text);
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: all 0.2s ease 0s;
-}
-
-.card .back a:hover {
-    background: #fff;
-    color: #333;
-}
-
-.cardBox:nth-child(1) .card .back {
-    background: var(--color-primary);
-}
-
-.cardBox:nth-child(2) .card .back {
-    background: var(--color-primary);
-}
-
-.cardBox:nth-child(3) .card .back {
-    background: var(--color-primary);
-}
-
-.cardBox:nth-child(2) .card {
-    -webkit-animation: giro 1.5s 1;
-    animation: giro 1.5s 1;
-}
-
-.cardBox:nth-child(3) .card {
-    -webkit-animation: giro 2s 1;
-    animation: giro 2s 1;
-}
-
-@-webkit-keyframes giro {
-    from {
-        transform: rotateY(180deg);
-    }
-
-    to {
-        transform: rotateY(0deg);
-    }
-}
-
-@keyframes giro {
-    from {
-        transform: rotateY(180deg);
-    }
-
-    to {
-        transform: rotateY(0deg);
-    }
+   
 }
 
 /* Check-In Button*/
-.center-checkin-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
+
+.container-checkin-button{
+    text-align: center;
+}
+
+.btn-primary{
+    margin-top:20px;
 }
 
 
@@ -568,7 +476,6 @@ a.back-home-calendar-button:hover {
 /* Style Calendar */
   
 
-  
 
 
 /* ===== Tasks * ===== */
@@ -781,32 +688,6 @@ a.back-home-checkin-button:hover {
     }
 }
 
-/* Flip */
-@media screen and (max-width: 767px) {
-    .cardBox {
-        margin-left: 2.8%;
-        margin-top: 3%;
-        width: 46%;
-    }
-
-    .card {
-        height: 285px;
-    }
-
-    .cardBox:last-child {
-        margin-bottom: 3%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .cardBox {
-        width: 94.5%;
-    }
-
-    .card {
-        height: 260px;
-    }
-}
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
