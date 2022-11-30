@@ -458,6 +458,10 @@ input[type="text"] {
 
 /* ===== Calendar * ===== */
 
+/* Style Calendar */
+
+   
+
 /*Button back home*/
 a.back-home-calendar-button {
     text-decoration: none;
@@ -472,9 +476,6 @@ a.back-home-calendar-button:hover {
     color: black;
     border-radius: 50%;
 }
-
-/* Style Calendar */
-  
 
 
 
@@ -498,22 +499,14 @@ a.back-home-tasks-button:hover {
 /* Task Generator */
 
 #wordbox {
-    position: absolute;
-    margin-left: -210px;
-    margin-top: 120px;
     text-align: center;
-    border-radius: 10px;
-    color: var(--color-secondary);
-
 }
 
 #button-task-generator {
     position: absolute;
     margin-left: 420px;
     margin-top: 140px;
-    background: var(--color-secondary);
     border: 0;
-    font-size: 20px;
     padding: .5em 1em;
     cursor: pointer;
     display: block;
