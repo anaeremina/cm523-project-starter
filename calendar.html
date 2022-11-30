@@ -16,7 +16,8 @@
     <!-- LINK TO YOUR STYLES -->
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
-    <link href="https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.css" rel="stylesheet" />
+    <link href='main.css' rel='stylesheet' />
+    <script src='main.js'></script>
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script src="scripts/scripts.js" defer></script>
      <!-- LINK TO Google Fonts Icons -->
@@ -26,58 +27,10 @@
     <!-- YOUR HTML GOES HERE -->
 
       <!--Back Home Arrow-->
-      <a href="index.html" class="back-home-calendar-button">&#8249;</a>
+      <a class="btn btn-primary" href="index.html" role="button">Let's Go Back</a>
 
             <!--Calendar Structure -->
 
-              <div id="calendarContainer"></div>
-              <div id="organizerContainer"></div>
-             
-             
-    <!-- EXTERNAL PLUG-IN: JS Logi -->
-
-              <script src="https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.js"></script>
-<script>
-// Basic config
-var calendar = new Calendar("calendarContainer", "small",
-                            [ "Monday", 3 ],
-                            {
-                                days: [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",  "Saturday" ],
-                                months: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
-                                indicator: false,
-                            });
-// Days Block click listener
-calendar.setOnClickListener('days-blocks',
-    // Called when a day block is clicked
-    function () {
-        console.log("Day block clicked");
-    }
-);
-
-// Month Slider (Left and Right Arrow) Click Listeners
-calendar.setOnClickListener('month-slider',
-    // Called when the month left arrow is clicked
-    function () {
-        console.log("Month back slider clicked");
-    },
-    // Called when the month right arrow is clicked
-    function () {
-        console.log("Month next slider clicked");
-    }
-);
-
-// Year Slider (Left and Right Arrow) Click Listeners
-calendar.setOnClickListener('year-slider',
-    // Called when the year left arrow is clicked
-    function () {
-        console.log("Year back slider clicked");
-    },
-    // Called when the year right arrow is clicked
-    function () {
-        console.log("Year next slider clicked");
-    }
-);
-</script>
-            
+        
     </body>
     </html>

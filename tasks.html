@@ -22,14 +22,14 @@
   <body>
     <!-- YOUR HTML GOES HERE -->
      <!--Back Home Arrow-->
-     <a href="index.html" class="back-home-tasks-button">&#8249;</a>
+     <a class="btn btn-primary" href="index.html" role="button">Let's Go Back</a>
 
   <!-- TASK GENERATOR  -->
 <div class="task-generator">
     <h3>Task Generator</h3>
      <br><br>   
     <form name = "WordForm">  
-    <input type = text name="WordBox" id="wordbox"><BR>
+    <input type="text" class="form-control" name="WordBox" id="wordbox"><BR>
     <br>
     <input class="btn btn-primary" type = button value="Give me a task" onClick="PickRandomWord(document.WordForm);" id="button-task-generator">
     </form>
@@ -41,7 +41,7 @@
   <!-- JS LOGIC -->
 
 <script>
-  var NumberOfWords = 23
+var NumberOfWords = 40
 var words = new BuildArray(NumberOfWords)
 words[1] = "Go swimming"
 words[2] = "Do the dishes"
