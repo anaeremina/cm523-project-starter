@@ -999,6 +999,11 @@ body.like .thumb span {
 }
 
 /* ===== TIMER * ===== */
+
+.center-button-timer-four{
+    text-align: center;
+}
+
 .text-timer {
     text-align: center;
 }
@@ -1048,6 +1053,16 @@ body.like .thumb span {
 
 .timer>svg>text+text {
     font-size: 1rem;
+}
+
+/* ===== CONGRATS SECTION SCREEN after timer section * ===== */
+
+.text-good-job{
+    text-align: center;
+}
+
+h1.text-good-job{
+   
 }
 
 /* ===== MEDIA QUERIES * ===== */
