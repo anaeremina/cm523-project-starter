@@ -262,6 +262,8 @@ ol>li {
     margin: 0 0 0.75em;
 }
 
+
+
 /* Menu */
 label .menu-about-us {
     position: absolute;
@@ -270,7 +272,7 @@ label .menu-about-us {
     z-index: 100;
     width: 200px;
     height: 200px;
-    background: var(--color-primary);
+    background: var(--color-primary-alt);
     border-radius: 50% 50% 50% 50%;
     -webkit-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
@@ -318,7 +320,7 @@ label input {
 }
 
 label input:checked+.menu-about-us {
-    box-shadow: 0 0 0 100vw var(--color-primary), 0 0 0 100vh var(--color-primary);
+    box-shadow: 0 0 0 100vw var(--color-primary-alt), 0 0 0 100vh var(--color-primary-alt);
     border-radius: 0;
 
 }
@@ -415,7 +417,7 @@ input[type="text"] {
     text-align: center;
     color: #FFF;
     text-transform: uppercase;
-    background: var(--color-primary);
+    background: var(--color-primary-alt);
     font-weight: bold;
     border-top-left-radius: 15px;
 }
