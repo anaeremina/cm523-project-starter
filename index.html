@@ -18,6 +18,28 @@
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script src="scripts/scripts.js" defer></script>
+	<style>
+		@media screen and (max-width:980px){
+			header h1 {
+			    text-align: center;
+			    display: flex;
+			}
+			header h1 span{
+				font-size: clamp(2rem, 10vw, 13rem)
+			}
+			header h2{
+				text-align: center;
+				font-size: 20px;
+			}
+			header p{
+				text-align: center;
+				font-size: 16px;
+			}
+			a{
+				margin: 0 auto;
+			}
+		}
+	</style>
   </head>
   <body class="main-page-center">
 
@@ -46,7 +68,9 @@
               <div class="card-body">
                 <h5 class="card-title">Calendar</h5>
                 <p class="card-text">Check your stats. According to a scientist, tracking down your emotional state can be helpful for you wellbeing.</p>
-                <a href="calendar.html">See the data</a>
+                <div class="link">
+					<a href="calendar.html">See the data</a>
+				</div>
               </div>
               <div class="card-footer">
               </div>
@@ -55,7 +79,9 @@
               <div class="card-body">
                 <h5 class="card-title">Tasks</h5>
                 <p class="card-text">Do you feel bored or maybe you want to bring something new to your daily routine? Check out our task section.</p>
-                <a href="tasks.html">Explore</a>
+                <div class="link">
+				<a href="tasks.html">Explore</a>
+				</div>
               </div>
               <div class="card-footer">
               </div>
@@ -64,7 +90,9 @@
               <div class="card-body">
                 <h5 class="card-title">Notebook</h5>
                 <p class="card-text">Do you feel like your thoughts are so heavy you cannot lift your head from the pillow? Perhaps it is time to write it down.</p>
-                <a href="notebook.html">Let's write </a>
+                <div class="link">
+					<a href="notebook.html">Let's write </a>
+				</div>
               </div>
               <div class="card-footer">
               </div>

@@ -18,6 +18,34 @@
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script src="scripts/scripts.js" defer></script>
+	<style>
+		@media screen and (max-width:980px){
+			
+			/* 修改字体的大小 */
+			h1{
+				font-size:24px ;
+				padding:0 10px;
+			}
+			h2{
+				font-size:20px;
+				padding:0 10px;
+			}
+			p{
+				padding: 0 10px;
+				font-size: 16px;
+			}
+			
+			/* 修改图片的大小 */
+			.wrapper .section{
+				width: 160px;
+				height: 160px;
+			}
+			.section li img{
+				width: 160px;
+				height: 160px;
+			}
+		}
+	</style>
   </head>
   <body class="main-page-checkin">
 
@@ -65,6 +93,10 @@ const input = document.querySelector("input");
 const bar = document.querySelector(".progress-bar");
 const thumb = document.querySelector(".thumb");
 
+
+var img_width=emoji.clientWidth;//获取到图片的大小
+
+//当进度改变的时候修改图片滚动的位置
 input.oninput = () => {
 	let sliderValue = input.value;
 	thumb.style.left = sliderValue + "%";
@@ -76,28 +108,28 @@ input.oninput = () => {
 		body.classList.remove("like");
 	}
 	if (sliderValue >= 15) {
-		emoji.style.marginTop = "-140px";
+		emoji.style.marginTop = "-"+img_width+"px";
 	}
 	if (sliderValue >= 30) {
-		emoji.style.marginTop = "-280px";
+		emoji.style.marginTop = "-"+(2*img_width)+"px";
 		body.classList.add("confuse");
 		body.classList.remove("angry");
 		body.classList.remove("like");
 	}
 	if (sliderValue >= 50) {
-		emoji.style.marginTop = "-420px";
+		emoji.style.marginTop = "-"+(3*img_width)+"px";
 	}
 	if (sliderValue >= 65) {
-		emoji.style.marginTop = "-560px";
+		emoji.style.marginTop = "-"+(4*img_width)+"px";
 	}
 	if (sliderValue >= 85) {
-		emoji.style.marginTop = "-700px";
+		emoji.style.marginTop = "-"+(5*img_width)+"px";
 		body.classList.add("like");
 		body.classList.remove("confuse");
 		body.classList.remove("angry");
 	}
 	if (sliderValue >= 100) {
-		emoji.style.marginTop = "-840px";
+		emoji.style.marginTop = "-"+(6*img_width)+"px";
 	}
 };
 

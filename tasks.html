@@ -18,12 +18,27 @@
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script src="scripts/scripts.js" defer></script>
+	<style>
+		@media screen and (max-width:980px){
+			h3{
+				font-size:24px ;
+				padding:0 20px;
+			}
+			p{
+				padding: 0 10px;
+				font-size: 16px;
+			}
+			form{
+				padding: 10px;
+			}
+		}
+	</style>
   </head>
   <body>
     <!-- YOUR HTML GOES HERE -->
      <!--Back Home Arrow-->
      <a class="btn btn-primary" href="index.html" role="button">Let's Go Back</a>
-
+<br><br>
   <!-- TASK GENERATOR  -->
 <div class="task-generator">
     <h3>Task Generator</h3>
@@ -95,5 +110,6 @@ var rnd = Math.ceil(Math.random() * NumberOfWords)
 
 
 frm.WordBox.value = words[rnd]
+localStorage.setItem('task',words[rnd])
 }
 </script>
