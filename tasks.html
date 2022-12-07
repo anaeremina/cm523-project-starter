@@ -56,8 +56,8 @@
   <!-- JS LOGIC -->
 
 <script>
-var NumberOfWords = 40
-var words = new BuildArray(NumberOfWords)
+let NumberOfWords = 40
+let words = new BuildArray(NumberOfWords)
 words[1] = "Go swimming"
 words[2] = "Do the dishes"
 words[3] = "Build something in CSS"
@@ -101,13 +101,13 @@ words[40] = "Make a collage"
 
 function BuildArray(size){
 this.length = size
-for (var i = 1; i <= size; i++){
+for (let i = 1; i <= size; i++){
 this[i] = null}
 return this
 }
 
 function PickRandomWord(frm) {
-var rnd = Math.ceil(Math.random() * NumberOfWords)
+let rnd = Math.ceil(Math.random() * NumberOfWords)
 
 
 frm.WordBox.value = words[rnd]
