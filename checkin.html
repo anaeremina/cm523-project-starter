@@ -83,7 +83,7 @@
 <br>
 
       <!--Button to timer -->
-<a class="btn btn-primary" href="timer4.html" role="button">Save</a>
+<a class="btn btn-primary" href="timer4.html" onclick="Confirm()">Save </a>
 
 </body>
 
@@ -133,6 +133,20 @@ input.oninput = () => {
 		emoji.style.marginTop = "-"+(6*img_width)+"px";
 	}
 };
+
+// redirect to a page based on the response of the user
+// Note that the pop up does not open in some browsers
+
+function Confirm() {
+	            let x;
+				let sliderValue = input.value;
+                if (confirm("Good day?") & sliderValue >= 65 == true) {
+					window.open('goodday.html');
+                } else {
+					x = "Bad day?"
+					window.open('badday.html');
+                }
+      }
 
 </script>
 
