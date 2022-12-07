@@ -135,16 +135,12 @@ input.oninput = () => {
 };
 
 // redirect to a page based on the response of the user
-// Note that the pop up does not open in some browsers
-// '_self' does not work
 
 function Confirm() {
-	            let x;
 				let sliderValue = input.value;
-                if (confirm("Good day?") & sliderValue >= 65 == true) {
+                if (sliderValue >= 65 == true) {
 					window.open('goodday.html');
                 } else {
-					x = "Bad day?"
 					window.open('badday.html');
                 }
       }
