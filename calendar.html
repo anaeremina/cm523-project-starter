@@ -111,6 +111,7 @@
             </div>
 
     <!-- JS Logic -->
+    <!-- Calendar -->
     <script>
 function CalendarApp(date) {
   
@@ -583,6 +584,8 @@ CalendarApp.prototype.showNewMonth = function(e){
 
 let  calendar = new CalendarApp();
 console.log(calendar);
+
+// TASK SECTION ensure that the last task gets saved to the calendar 
 
 if(localStorage.getItem('task')){//if task can be captured from localStorage
 	document.querySelector('#task').innerHTML=localStorage.getItem('task');//display task
