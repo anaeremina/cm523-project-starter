@@ -886,19 +886,11 @@ a.back-home-tasks-button:hover {
 
 body.main-page-checkin {
 	min-height: 100vh;
-	background: linear-gradient(#fd8d58, #dc611e);
+	background: #89c5d4;
 	padding: 20px;
 	transition: all 0.3s ease;
 }
-body.angry {
-	background: linear-gradient(#fd8d58, #dc611e);
-}
-body.confuse {
-	background: linear-gradient(#fea954, #da7315);
-}
-body.like {
-	background: linear-gradient(#fed151, #de981f);
-}
+
 .section-align{
 display: flex;
 	align-items: center;
@@ -964,23 +956,23 @@ display: flex;
 .slider .progress-bar {
 	height: 100%;
 	width: 0%;
-	background: linear-gradient(45deg, #fd8d58, #dc611e);
+	background: linear-gradient(45deg, #212b96, #534ee8);
 	border-radius: 30px;
 	position: relative;
 }
 body.angry .progress-bar {
-	background: linear-gradient(45deg, #fd8d58, #dc611e);
+	background: linear-gradient(45deg, #a2c4f9, #6a9ed9);
 }
 body.confuse .progress-bar {
-	background: linear-gradient(45deg, #fea954, #da7315);
+	background: linear-gradient(45deg, #f193db, #e9a9d9);
 }
 body.like .progress-bar {
-	background: linear-gradient(45deg, #fed151, #de981f);
+	background: linear-gradient(45deg, #fe515d, #eb5252);
 }
 .slider .thumb {
 	height: 20px;
 	width: 20px;
-	background: #dc611e;
+	background: var(--color-accent);
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
@@ -993,10 +985,10 @@ body.angry .thumb {
 	background: #fd5e0b;
 }
 body.confuse .thumb {
-	background: #da7315;
+	background: #eda562;
 }
 body.like .thumb {
-	background: #de981f;
+	background: #e3da5b;
 }
 .slider .thumb span {
 	height: 100%;
