@@ -874,6 +874,11 @@ a.back-home-tasks-button:hover {
    
 }
 
+.tasks-adjustment{
+  background: linear-gradient(45deg, #f8f099, #ecc654);
+
+}
+
 /* ===== SCALE * ===== */
 
 /* Typography*/
@@ -1280,7 +1285,7 @@ body.like .thumb span {
     font-size: 16px;
   }
   form{
-    padding: 10px;
+    padding: 1rem 1rem;
   }
   #wordbox{
     font-size: 16px;
