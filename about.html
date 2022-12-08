@@ -18,25 +18,13 @@
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script src="scripts/scripts.js" defer></script>
-	<style>
-		@media screen and (max-width:980px){
-			article{
-				padding: 10px;
-			}
-			h5{
-				padding: 10px;
-			}
-			.badges{
-				padding: 10px;
-			}
-		}
-	</style>
   </head>
   <body>
     <!-- YOUR HTML GOES HERE -->
         <!-- Button to the home page-->
-        <a class="btn btn-primary" href="index.html" role="button">Let's Go Back</a>
-
+       <div class="container-main-page">
+        <a class="btn btn-primary" id="btn-responsive" href="index.html" role="button">Let's Go Back</a>
+      </div>
         <!-- Hamburger menu, links to outside sources-->
         <div>
         <label>
@@ -61,14 +49,14 @@
             <article class="main-summary">
               <aside class="post-meta">
               </aside>
-              <h1>About the project</h1>
-              <p>Mood tracking is <i>a valuable tool</i> for mental health. Many of us struggle with recurring negative 
+              <h1 class="about-heading-one">About the project</h1>
+              <p class="about-text">Mood tracking is <i>a valuable tool</i> for mental health. Many of us struggle with recurring negative 
                 thoughts that undermine our confidence, outlook, mood, and self-esteem, which turn into self-fulfilling prophecies. <b>UpForU</b> is an 
                 emotion-tracking calendar that offers a set of tasks based on your daily well-being to lead you down a path toward a better version of yourself.
                 You can track, check, and work on your emotional state within the web.</p>
               </article>
 
-              <h5>Skills we learned</h5>
+              <h5 class="heading-five-about">Skills we learned</h5>
               <br> 
               <div class="badges">
 				  <span class="badge badge-pill badge-warning">html</span>

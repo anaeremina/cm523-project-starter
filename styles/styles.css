@@ -1164,7 +1164,20 @@ body.like .thumb span {
         .badges{
           padding: 10px;
         }
+        .about-text {
+        font-size: 1rem;
+        }
+    
       }
+
+      @media (max-width: 768px) {
+        #btn-responsive-about {
+          font-size:90%;
+          line-height: 1;
+          border-radius:3px;
+        }
+      }
+  
  /* BadDay Size Adjustments*/
 
  @media screen and (max-width:980px){
