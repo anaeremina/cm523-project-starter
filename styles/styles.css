@@ -1274,4 +1274,8 @@ body.like .thumb span {
   form{
     padding: 10px;
   }
+  #wordbox{
+    font-size: 16px;
+  }
+
 }
