@@ -1091,7 +1091,6 @@ body.like .thumb span {
     }
 }
 
-
 /* For devices larger than 400px */
 @media (min-width: 400px) {
     .container {
@@ -1153,3 +1152,113 @@ body.like .thumb span {
           font-size:0.9rem;
         }
       }
+ /* About Page Size Adjustments*/
+ 
+      @media screen and (max-width:980px){
+        .main-summary{
+          padding: 10px;
+        }
+        .heading-five-about{
+          padding: 10px;
+        }
+        .badges{
+          padding: 10px;
+        }
+      }
+ /* BadDay Size Adjustments*/
+
+ @media screen and (max-width:980px){
+  .badday-heading-two{
+    font-size:24px ;
+    padding:0 20px;
+  }
+  .badday-text{
+    padding: 0 10px;
+    font-size: 16px;
+  }
+}
+
+/* Calendar Size Adjustments*/
+
+@media screen and (max-width:980px){
+  .calendar{
+    padding: 23px 10px 33px 10px;
+  }
+  .footer{
+      bottom: 10px;
+  }
+  
+  .day-add-event .row{
+    flex-wrap: nowrap;
+  }
+}
+/* Check-in Size Adjustments*/
+
+@media screen and (max-width:980px){
+			
+  /* change the font size */
+  .check-in-heading-one{
+    font-size:24px ;
+    padding:0 10px;
+  }
+  .check-in-heading-two{
+    font-size:20px;
+    padding:0 10px;
+  }
+  .check-in-text{
+    padding: 0 10px;
+    font-size: 16px;
+  }
+  
+  /* adjust the image size */
+  .wrapper .section{
+    width: 160px;
+    height: 160px;
+  }
+  .section li img{
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Congrats Screen After Timer Size Adjustments*/
+
+@media screen and (max-width:980px){
+  .congrats-heading-two{
+    font-size:24px ;
+    padding:0 20px;
+  }
+  .congrats-text{
+    padding: 0 10px;
+    font-size: 16px;
+  }
+}
+
+/* Good Day Screen Size Adjustments*/
+
+@media screen and (max-width:980px){
+  .good-heading-two{
+    font-size:24px ;
+    padding:0 20px;
+  }
+  .good-text{
+    padding: 0 10px;
+    font-size: 16px;
+  }
+}
+
+/* Task Screen Size Adjustments*/
+
+@media screen and (max-width:980px){
+  .task-heading-three{
+    font-size:24px ;
+    padding:0 20px;
+  }
+  .task-text{
+    padding: 0 10px;
+    font-size: 16px;
+  }
+  form{
+    padding: 10px;
+  }
+}
