@@ -841,9 +841,6 @@ input[type="text"] {
   }
      
 
-
-
-
 /* ===== Tasks * ===== */
 
 /*Button back home*/
@@ -1076,6 +1073,17 @@ body.like .thumb span {
 
 .text-good-job{
     text-align: center;
+}
+
+/* ===== BAD DAY SCREEN * ===== */
+
+.bad-adjusting{
+  background: linear-gradient(45deg, #c5d4ec, #6a9ed9);
+}
+
+/* ===== GOOD DAY SCREEN * ===== */
+.good-job-adjusting{
+  background: linear-gradient(45deg, #f8f099, #ecc654);
 }
 
 
