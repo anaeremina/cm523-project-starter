@@ -221,8 +221,8 @@ header p{
   
 }
 .card {
-    background: var(--color-primary-alt);
-    /* border: 0.15em solid #222; */
+  background: var(--color-primary-alt);
+   border: 0.15em solid #222; 
    border-radius: 2em;
 }
 .card-body{
@@ -239,7 +239,7 @@ header p{
 	color: var(--color-text);
 }
 .card .card-body .link a:hover{
-	color: var(--color-primary);
+	color:#275ec5;
 }
 
 
