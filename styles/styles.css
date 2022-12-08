@@ -450,6 +450,11 @@ input[type="text"] {
 
 /* ===== Calendar * ===== */
 
+.calendar-page-adjusting{
+  background: linear-gradient(60deg, #f8f099, #f8e2a1);
+
+}
+
 /* Style Calendar */
 
 .calendar{
@@ -874,6 +879,7 @@ a.back-home-tasks-button:hover {
    
 }
 
+/* Background Color */
 .tasks-adjustment{
   background: linear-gradient(45deg, #f8f099, #ecc654);
 
