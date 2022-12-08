@@ -113,10 +113,13 @@ p {
 
 
 /* ===== HOME PAGE (index) * ===== */
-
+.container-main-page{
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
 
 /*header section*/
-
+    
 header>.intro {
     display: flex;
     flex-direction: column;
@@ -1126,3 +1129,12 @@ h1.text-good-job{
       width: 25%;
     }
   }
+
+      /*About Button Size Index Page*/
+      @media (max-width: 768px) {
+        #btn-responsive {
+          font-size:90%;
+          line-height: 1;
+          border-radius:3px;
+        }
+      }
