@@ -113,6 +113,8 @@ p {
 
 
 /* ===== HOME PAGE (index) * ===== */
+
+/* About button edit*/
 .container-main-page{
   padding-top: 1rem;
   padding-left: 1rem;
@@ -215,6 +217,8 @@ header p{
 
 .card-deck{
     display: flex;
+    padding: 1rem 1rem;
+  
 }
 .card {
     background: var(--color-primary-alt);
@@ -1074,9 +1078,6 @@ body.like .thumb span {
     text-align: center;
 }
 
-h1.text-good-job{
-   
-}
 
 /* ===== MEDIA QUERIES * ===== */
 
@@ -1136,5 +1137,19 @@ h1.text-good-job{
           font-size:90%;
           line-height: 1;
           border-radius:3px;
+        }
+      }
+    
+      /* Sizing Heading Two and Paragraph Index Page */
+      @media (max-width: 800px) {
+        .index-heading-two {
+          font-size:1.2rem;
+          font-weight: 500;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .index-parag-two {
+          font-size:0.9rem;
         }
       }
