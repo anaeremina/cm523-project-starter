@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
-    <script src="scripts/scripts.js" defer></script>
+    <!-- <script src="scripts/scripts.js" defer></script> -->
 
   </head>
   <body class="tasks-adjustment">
@@ -36,6 +36,7 @@
       <form name = "WordForm">  
       <input type="text" class="form-control" aria-describedby="basic-addon3" name="WordBox" id="wordbox">
     <input class="btn btn-primary" type = button value="Give me a task" onClick="PickRandomWord(document.WordForm);" id="button-task-generator">
+	<input class="btn btn-primary" type = button value="save" onClick="save();" id="button-task-save">
     </form>
   </div>
   </body>
@@ -99,6 +100,37 @@ let rnd = Math.ceil(Math.random() * NumberOfWords)
 
 
 frm.WordBox.value = words[rnd]
-localStorage.setItem('task',words[rnd])
+
+}
+
+function save(){
+	//execute while click save
+	if(document.WordForm.WordBox.value){//check the value from input box, if filled, then store it at localStorage
+	
+	let time=new Date();
+	
+	//display the data that we saved
+		let message={
+			time:time.getFullYear()+'-'+(time.getMonth()+1)+'-'+time.getDate(),
+			value:document.WordForm.WordBox.value,
+		}
+		
+		//capture all the data that saved at localStorage
+		
+		let before_message=localStorage.getItem('task');
+		//if the data has been stored before
+			if(before_message){
+				//then add new data
+				let beforedata=JSON.parse(before_message)
+				beforedata.push(message)
+				localStorage.setItem('task',JSON.stringify(beforedata))
+				alert('success')
+			}else{
+				localStorage.setItem('task',JSON.stringify([message]))
+				alert('success')
+			} 
+	}else{
+		alert('please explore your options')
+	}
 }
 </script>

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
-    <script src="scripts/scripts.js" defer></script>
+    <!-- <script src="scripts/scripts.js" defer></script> -->
   </head>
   <body>
     <!-- YOUR HTML GOES HERE -->
@@ -34,13 +34,48 @@
       <div class="buttons">
       
           <!-- Button: Save and Clear -->
-        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-primary" type="submit" onclick="save()">Save</button>
       </div>
     </div>
 
           <!-- Save notebook responses -->
-        
-          </script>
+        <script>
+			
+			//execute while click 'save'
+			function save(){
+				let title=document.querySelector('#response-user').value;//title content
+				let content=document.querySelector('.editor').textContent;//text content
+				if(title&&content){
+					let time=new Date();
+					//let time and message data saved as 'string'
+					let message={
+						time:time.getFullYear()+'-'+(time.getMonth()+1)+'-'+time.getDate(),
+						value:content,
+						title:title,
+					}
+					//capture all the data that saved at localStorage
+					let before_message=localStorage.getItem('notebook');
+					//if the data has been stored before
+						if(before_message){
+							//then add new data
+							let beforedata=JSON.parse(before_message)
+							console.log(beforedata)
+							beforedata.push(message)
+							localStorage.setItem('notebook',JSON.stringify(beforedata))
+							alert('success')
+						}else{
+							localStorage.setItem('notebook',JSON.stringify([message]))
+							alert('success')
+						}
+						
+						
+				}else{
+					alert('Please enter the title and content')
+				}
+			}
+			 
+			
+		</script>
   </body>
   </html>
   

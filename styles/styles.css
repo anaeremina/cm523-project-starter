@@ -879,6 +879,10 @@ a.back-home-tasks-button:hover {
    
 }
 
+#button-task-save{
+	margin-left: 20px;
+}
+
 /* Background Color */
 .tasks-adjustment{
   background: linear-gradient(45deg, #f8f099, #ecc654);
@@ -1136,7 +1140,23 @@ body.like .thumb span {
 
 
 /* Calendar Page */ 
-
+#task{
+	height: 341px;
+	overflow-y: scroll;
+}
+.calendar_notebook_title{
+	   font-size: 16px;
+	       font-weight: bold;
+	       margin: 0;
+	       line-height: 1.5;
+}
+.book_item{
+	       margin-top: 10px;
+	       background: #8fb8e5;
+	       padding: 10px;
+	       font-size: 14px;
+	       font-weight: normal;
+}
 @media (min-width: 800px){
     .row{
       flex-wrap: nowrap;
@@ -1296,5 +1316,8 @@ body.like .thumb span {
   #wordbox{
     font-size: 16px;
   }
-
+  #task{
+  	height: 280px;
+  	overflow-y: scroll;
+  }
 }

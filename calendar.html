@@ -244,7 +244,56 @@ CalendarApp.prototype.showDay = function(e, dayEle) {
   
   this.calDaySelected = dayEle;
   
+   let str_html="";
+   
+  let time=new Date(dayDate);
+  time=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+time.getDate();//reformat the time
+  console.log(time)
+  // TASK SECTION ensure that the last task gets saved to the calendar
+  let task=localStorage.getItem('task')
+  
+  if(task){//if task can be captured from localStorage
+	  //change task string into an array
+	  task=JSON.parse(task)
+	 
+	  for(let x in task){//loop the array
+		  //if the time match
+		  if(time==task[x].time){
+			  str_html+='<div  class="book_item">'+task[x].value+'</div>'
+		  }
+	  }
+  
+  }
+  
+   let notebook=localStorage.getItem('notebook')
+  if(notebook){//if notebook can be captured from localStorage
+  	  //change notebook data into a array
+  	  notebook=JSON.parse(notebook)
+  	  for(let x in notebook){//loop the array 
+		  //if the time matched
+		  if(time==notebook[x].time){
+			  str_html+='<div class="book_item"><h3 class="calendar_notebook_title">'+notebook[x].title+'</h3>'+notebook[x].value+'</div>'
+			  
+		  }
+  	  }
+  }
+  
+  //if the html string has filled
+  if(str_html){
+	   document.querySelector('#task').style.display='block'
+	    document.querySelector('#task').innerHTML=str_html;//display task
+		//remove "no task"
+		document.querySelector('#notask').style.display='none'
+  }else{
+	  document.querySelector('#task').style.display='none'
+	  document.querySelector('#notask').style.display='block'
+  }
+
+
+
   this.openDayWindow(dayDate);
+  
+
   
 };
 CalendarApp.prototype.openDayWindow = function(date){
@@ -574,13 +623,6 @@ CalendarApp.prototype.showNewMonth = function(e){
 let  calendar = new CalendarApp();
 console.log(calendar);
 
-// TASK SECTION ensure that the last task gets saved to the calendar 
-
-if(localStorage.getItem('task')){//if task can be captured from localStorage
-	document.querySelector('#task').innerHTML=localStorage.getItem('task');//display task
-	//remove "no task"
-	document.querySelector('#notask').style.display='none'
-}
 
         </script>
     </body>
